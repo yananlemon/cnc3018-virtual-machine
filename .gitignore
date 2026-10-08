@@ -1,0 +1,24 @@
+# Build directories and local tools
+build/
+work/
+outputs/
+CMakeUserPresets.json
+*.user
+.vs/
+.vscode/
+# Runtime binaries and generated deliverables
+*.exe
+*.dll
+*.obj
+*.o
+*.a
+*.lib
+*.pdb
+*.zip
+*.stl
+# Local fixture preferences and validation artifacts
+setup.json
+verification*/
+third-party-licenses/
+# User machining inputs belong outside the repository.
+# examples/3018-demo.nc is an intentional source example.

@@ -1,0 +1,27 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 25, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "windows-release",
+      "displayName": "MSYS2 MinGW64 / Qt 6 / Release",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "C:/msys64/mingw64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "C:/msys64/mingw64/bin/mingw32-make.exe",
+        "CMAKE_PREFIX_PATH": "C:/msys64/mingw64",
+        "BUILD_TESTING": "ON"
+      }
+    },
+    {
+      "name": "core-only",
+      "inherits": "windows-release",
+      "binaryDir": "${sourceDir}/build/core",
+      "cacheVariables": {"CNC_BUILD_DESKTOP": "OFF"}
+    }
+  ],
+  "buildPresets": [{"name": "windows-release", "configurePreset": "windows-release", "jobs": 4}],
+  "testPresets": [{"name": "windows-release", "configurePreset": "windows-release", "output": {"outputOnFailure": true}}]
+}
